@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "model": "adder",
+    "name": "Truffade Adder",
+    "price": 1000000,
+    "category": "Super",
+    "maxSpeed": 120,
+    "acceleration": 9.5,
+    "seats": 2,
+    "description": "极速超级跑车，适合追求速度的玩家",
+    "image": "adder.png"
+  },
+  {
+    "id": 2,
+    "model": "zentorno",
+    "name": "Pegassi Zentorno",
+    "price": 750000,
+    "category": "Super",
+    "maxSpeed": 118,
+    "acceleration": 9.2,
+    "seats": 2,
+    "description": "经典超级跑车，平衡性能与价格",
+    "image": "zentorno.png"
+  },
+  {
+    "id": 3,
+    "model": "sultan",
+    "name": "Karin Sultan",
+    "price": 150000,
+    "category": "Sports",
+    "maxSpeed": 105,
+    "acceleration": 8.0,
+    "seats": 4,
+    "description": "四门运动轿车，实用性高",
+    "image": "sultan.png"
+  },
+  {
+    "id": 4,
+    "model": "bison",
+    "name": "Bravado Bison",
+    "price": 85000,
+    "category": "Utility",
+    "maxSpeed": 90,
+    "acceleration": 6.5,
+    "seats": 4,
+    "description": "实用皮卡，适合载货",
+    "image": "bison.png"
+  },
+  {
+    "id": 5,
+    "model": "faggio",
+    "name": "Faggio Sport",
+    "price": 5000,
+    "category": "Motorcycles",
+    "maxSpeed": 60,
+    "acceleration": 4.0,
+    "seats": 2,
+    "description": "经济实惠的踏板摩托车",
+    "image": "faggio.png"
+  }
+]
