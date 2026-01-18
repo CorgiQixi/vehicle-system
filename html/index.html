@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Motors - 车辆展厅</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* 内联强制样式，确保UI显示 */
+        body {
+            background: transparent !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+        }
+        
+        .container {
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            background: white !important;
+            z-index: 2147483647 !important;
+        }
+        
+        /* 加载动画 */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            z-index: 2147483648;
+            transition: opacity 0.3s ease;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 加载遮罩 -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Vehicle Shop...</div>
+    </div>
+
+    <!-- 主容器 -->
+    <div class="container" id="mainContainer" style="display: none;">
+        <!-- 顶部栏 -->
+        <div class="header">
+            <h1><i class="fas fa-car"></i> Premium Motors</h1>
+            <div class="player-info">
+                <div class="money">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span id="playerMoney">$0</span>
+                </div>
+                <button class="close-btn" id="closeBtn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 车辆列表 -->
+            <div class="vehicle-list" id="vehicleList">
+                <div class="no-vehicles">正在加载车辆数据...</div>
+            </div>
+
+            <!-- 车辆详情 -->
+            <div class="vehicle-details" id="vehicleDetails">
+                <div class="details-header">
+                    <h2 id="detailTitle">选择一辆车</h2>
+                </div>
+                
+                <div class="details-content">
+                    <div class="vehicle-image">
+                        <img id="detailImage" src="" alt="车辆图片">
+                    </div>
+                    
+                    <div class="vehicle-info">
+                        <div class="info-row">
+                            <span class="label">类别:</span>
+                            <span id="detailCategory" class="value">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">最高速度:</span>
+                            <span id="detailSpeed" class="value">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">加速度:</span>
+                            <span id="detailAcceleration" class="value">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">座位:</span>
+                            <span id="detailSeats" class="value">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">价格:</span>
+                            <span id="detailPrice" class="value price">$0</span>
+                        </div>
+                        
+                        <div class="description">
+                            <h3>车辆描述</h3>
+                            <p id="detailDescription">请从左侧选择一辆车查看详情</p>
+                        </div>
+                        
+                        <div class="action-buttons">
+                            <button class="btn test-drive" id="testDriveBtn">
+                                <i class="fas fa-road"></i> 试驾
+                            </button>
+                            <button class="btn purchase" id="purchaseBtn">
+                                <i class="fas fa-shopping-cart"></i> 购买
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 通知区域 -->
+        <div class="notification" id="notification">
+            <span id="notificationText"></span>
+        </div>
+        
+        <!-- ESC提示 -->
+        <div class="esc-hint">
+            <i class="fas fa-info-circle"></i> 按 ESC 键关闭窗口
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
